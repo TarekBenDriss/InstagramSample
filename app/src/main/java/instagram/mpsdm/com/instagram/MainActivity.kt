@@ -15,6 +15,7 @@ private const val NUM_PAGES = 3
 
 class MainActivity : FragmentActivity() {
 
+
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
