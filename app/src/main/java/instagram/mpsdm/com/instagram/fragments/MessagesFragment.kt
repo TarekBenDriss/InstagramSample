@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import instagram.mpsdm.com.instagram.FragmentDelegate
 import instagram.mpsdm.com.instagram.R
 import instagram.mpsdm.com.instagram.adapters.MessagesAdapter
 import instagram.mpsdm.com.instagram.models.Message
@@ -16,6 +18,7 @@ import instagram.mpsdm.com.instagram.models.Message
 
 class MessagesFragment : Fragment() {
 
+    var delegate: FragmentDelegate? = null
     val messages: ArrayList<Message> = ArrayList()
 
 
@@ -31,18 +34,20 @@ class MessagesFragment : Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler)
         val mLayoutManager = LinearLayoutManager(getContext())
+        val back:ImageView = view.findViewById(R.id.returnImg)
+
+        back.setOnClickListener {
+            delegate?.messagesFragmentDidClickCancelButton(this)
+        }
 
         addMessages()
-        //var mSlideInUpAnimator: SlideInUpAnimator
         recyclerView.setLayoutManager(mLayoutManager)
         recyclerView.setHasFixedSize(true)
 
         recyclerView.setAdapter(MessagesAdapter(messages,context))
-/*
-        mSlideInUpAnimator = SlideInUpAnimator(OvershootInterpolator(1f))
-        mSlideInUpAnimator.setAddDuration(2000)
-        mRcvMovies.setItemAnimator(mSlideInUpAnimator)
-*/
+
+
+
         return view
     }
 
@@ -56,4 +61,11 @@ class MessagesFragment : Fragment() {
        messages.add(Message("Tarek6","Message"))
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentDelegate) {
+            delegate = context
+        }
+    }
 }
+

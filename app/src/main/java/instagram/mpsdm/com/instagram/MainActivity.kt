@@ -6,21 +6,19 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import instagram.mpsdm.com.instagram.fragments.HomeFragment
-import instagram.mpsdm.com.instagram.fragments.MessagesFragment
-import instagram.mpsdm.com.instagram.fragments.StoryFragment
+import instagram.mpsdm.com.instagram.fragments.*
 
 private const val NUM_PAGES = 3
 
 
-class MainActivity : FragmentActivity() {
+class MainActivity : FragmentActivity(), FragmentDelegate {
 
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
      */
-    private lateinit var viewPager: ViewPager2
+    lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,4 +87,33 @@ class MainActivity : FragmentActivity() {
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
     }
+
+
+    override fun homeFragmentDidClickMessagesButton(fragment: HomeFragment) {
+        viewPager.currentItem=2
+    }
+
+    override fun homeFragmentDidClickStoryButton(fragment: HomeFragment) {
+        viewPager.currentItem=0
+    }
+
+    override fun messagesFragmentDidClickCancelButton(fragment: MessagesFragment) {
+        viewPager.currentItem=1
+    }
+
+    override fun storyFragmentDidClickCancelButton(fragment: StoryFragment) {
+        viewPager.currentItem=1
+    }
+
+}
+
+
+
+interface FragmentDelegate {
+    fun storyFragmentDidClickCancelButton(fragment: StoryFragment)
+    //fun storyFragmentDidClickFlipButton(fragment: StoryFragment)
+    fun messagesFragmentDidClickCancelButton(fragment: MessagesFragment)
+    fun homeFragmentDidClickMessagesButton(fragment: HomeFragment)
+    fun homeFragmentDidClickStoryButton(fragment: HomeFragment)
+
 }
