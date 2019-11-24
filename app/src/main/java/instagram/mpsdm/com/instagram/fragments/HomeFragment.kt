@@ -1,6 +1,7 @@
 package instagram.mpsdm.com.instagram.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +9,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import instagram.mpsdm.com.instagram.FragmentDelegate
+import instagram.mpsdm.com.instagram.LoginActivity
 import instagram.mpsdm.com.instagram.R
 
 class HomeFragment : Fragment() {
 
     var delegate: FragmentDelegate? = null
-
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -32,6 +33,11 @@ class HomeFragment : Fragment() {
         messages.setOnClickListener{
             delegate?.homeFragmentDidClickMessagesButton(this)
         }
+
+        var intent:Intent = Intent(activity,LoginActivity::class.java)
+        intent.setAction(Intent.ACTION_VIEW)
+        startActivity(intent)
+
         return view
     }
 
