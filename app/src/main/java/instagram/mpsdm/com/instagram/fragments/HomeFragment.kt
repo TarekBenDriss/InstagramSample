@@ -33,11 +33,11 @@ class HomeFragment : Fragment() {
         messages.setOnClickListener{
             delegate?.homeFragmentDidClickMessagesButton(this)
         }
-
+/*
         var intent:Intent = Intent(activity,LoginActivity::class.java)
         intent.setAction(Intent.ACTION_VIEW)
         startActivity(intent)
-
+*/
         return view
     }
 

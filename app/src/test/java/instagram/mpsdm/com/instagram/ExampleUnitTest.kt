@@ -1,5 +1,6 @@
 package instagram.mpsdm.com.instagram
 
+import io.reactivex.Observable
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -14,4 +15,17 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 3)
     }
+
+    var result = ""
+
+    // Simple subscription to a fix value
+    @Test
+    fun returnAValue() {
+        result = ""
+        val observer = Observable.just("Hello") // provides data
+        observer.subscribe({ s -> result = s }) // Callable as subscriber
+        assertTrue(result == "Hello")
+    }
+
+
 }

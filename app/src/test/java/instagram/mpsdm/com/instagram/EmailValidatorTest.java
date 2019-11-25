@@ -20,4 +20,17 @@ public class EmailValidatorTest {
     public void emailValidator_EmptyString_ReturnsFalse() {
         assertFalse(EmailValidator.isValidEmail(""));
     }
+/*
+    String result="";
+
+    // Simple subscription to a fix value
+    @Test
+    public void returnAValue(){
+        result = "";
+        Observable<String> observer = Observable.just("Hello"); // provides data
+        observer.subscribe(s -> result=s); // Callable as subscriber
+        assertTrue(result.equals("Hello"));
+    }
+
+*/
 }
