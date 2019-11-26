@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:contentDescription="@string/app_name"
+        android:id="@+id/imgProfil"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/a9welslogo"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:contentDescription="@string/app_name"
+        android:id="@+id/postParams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/postparams"
+        app:layout_constraintBottom_toBottomOf="@id/imgProfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgProfil" />
+
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black2"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProfil"
+        app:layout_constraintEnd_toStartOf="@id/postParams"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/imgProfil"
+        app:layout_constraintTop_toTopOf="@+id/imgProfil"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <ImageView
+        android:id="@+id/postContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/imgProfil"/>
+
+    <ImageView
+        android:id="@+id/like"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postContent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/like"
+        android:layout_margin="18dp"
+        />
+
+    <ImageView
+        android:id="@+id/mark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postContent"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/mark"
+        android:layout_margin="18dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/comment"
+        app:layout_constraintStart_toEndOf="@id/like"
+        app:layout_constraintTop_toBottomOf="@id/postContent"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/comment"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="24dp"
+        />
+
+    <ImageView
+        android:id="@+id/share"
+        app:layout_constraintStart_toEndOf="@id/comment"
+        app:layout_constraintTop_toBottomOf="@id/postContent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/send"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="24dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/likes"
+        app:layout_constraintTop_toBottomOf="@id/like"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:text="a9wel_moudablja et 22 autres aiment"
+        android:textStyle="bold"
+        android:textColor="@color/black2"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nom2"
+        app:layout_constraintTop_toBottomOf="@id/likes"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:text="a9wel.moudablja"
+        android:textColor="@color/black2"
+        android:textSize="16sp"
+        />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        app:layout_constraintTop_toBottomOf="@id/nom2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="هههههههههه ملا فازة"
+        android:textColor="@color/black3"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Voir les 22 commentaires"
+        android:textColor="#a5a5a5"
+        android:textSize="16sp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/commentSection"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="@id/comments"
+        app:layout_constraintBottom_toBottomOf="@id/comments"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/profile"
+            android:id="@+id/commentProfile"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ajouter votre commentaire"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/commentProfile"
+            app:layout_constraintEnd_toStartOf="@id/haha"
+            />
+
+        <ImageView
+            android:id="@+id/haha"
+            android:src="@drawable/haha"
+            app:layout_constraintEnd_toStartOf="@id/love"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/love"
+            android:src="@drawable/love"
+            app:layout_constraintEnd_toStartOf="@id/addemoji"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/addemoji"
+            android:src="@drawable/addemoji"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/passedTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Il y a 2 heures"
+        android:textColor="#a5a5a5"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/comments" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

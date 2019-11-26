@@ -9,4 +9,6 @@
     <color name="appareilphoto">#3897f0</color>
     <color name="black">#000</color>
     <color name="black2">#262626</color>
+    <color name="black3">#3F3F3F</color>
+    <color name="horizontalstoryline">#f1f1f1</color>
 </resources>
